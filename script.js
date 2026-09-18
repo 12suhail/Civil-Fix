@@ -20,9 +20,12 @@ const demoIssues = [
 
 function allIssues() {
     const saved = JSON.parse(localStorage.getItem("civicfixIssues") || "[]");
-    return [...demoIssues].map(d =>
-        saved.find(s => s.id === d.id) || d
-    ).concat(saved.filter(s => !demoIssues.some(d => d.id === s.id)));
+    const deleted = JSON.parse(localStorage.getItem("deletedIssues") || "[]");
+
+    return [...demoIssues]
+        .filter(d => !deleted.includes(d.id))
+        .map(d => saved.find(s => s.id === d.id) || d)
+        .concat(saved.filter(s => !demoIssues.some(d => d.id === s.id)));
 }
 function makeId() { return "CF" + Math.floor(1000 + Math.random() * 9000) }
 function statusClass(s) { return s.replaceAll(" ", "-").toLowerCase() }
@@ -141,10 +144,16 @@ function deleteIssue(id) {
     if (!confirm("Are you sure you want to delete this complaint?")) return;
 
     let saved = JSON.parse(localStorage.getItem("civicfixIssues") || "[]");
+    let deleted = JSON.parse(localStorage.getItem("deletedIssues") || "[]");
 
     saved = saved.filter(x => x.id !== id);
 
+    if (!deleted.includes(id)) {
+        deleted.push(id);
+    }
+
     localStorage.setItem("civicfixIssues", JSON.stringify(saved));
+    localStorage.setItem("deletedIssues", JSON.stringify(deleted));
 
     renderAdmin();
 }
