@@ -59,14 +59,18 @@ if (form) {
 }
 const trackForm = document.getElementById("trackForm");
 function renderTrack(id) {
-    const box = document.getElementById("trackResult"); if (!box) return;
+    const box = document.getElementById("trackResult"); 
+    if (!box) 
+        return;
     const issue = allIssues().find(x => x.id.toUpperCase() === id.toUpperCase());
     if (!issue) { box.innerHTML = `<div class="result">❌ No complaint found for <b>${id}</b>. 
     Try CF1025, CF1024 or CF1023.</div>`; 
     return 
 }
     const statuses = ["Pending", "Under Review", "In Progress", "Resolved"];
-    let idx = statuses.indexOf(issue.status); if (idx < 0) idx = 0;
+    let idx = statuses.indexOf(issue.status); 
+    if (idx < 0) 
+        idx = 0;
     box.innerHTML = `<div class="result"><div class="issue-head"><div>
     <div class="meta">${issue.id} · ${issue.date}</div><h2>${issue.type} issue</h2>
     <p>${issue.description}</p><div class="meta">📍 ${issue.location}</div></div>
