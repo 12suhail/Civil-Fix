@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Public Issues - CivicFix</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav><a class="brand" href="index.html"><img src="civilfix-logo.png" alt="CivicFix" class="logo"></a>
+        <div class="navlinks">
+            <a href="index.html">Home</a>
+            <a href="report.html">Report Issue</a><a href="track.html">Track</a>
+            <a class="active" href="issues.html">Public Issues</a>
+            <a href="admin.html">Admin</a>
+        </div>
+    </nav>
+    <main class="page">
+        <div class="page-title"><span class="pill">TRANSPARENCY DASHBOARD</span>
+            <h1>Public issue board</h1>
+            <p>Explore anonymized demo reports from the community.</p>
+        </div>
+        <div class="toolbar"><input id="issueSearch" placeholder="🔎 Search by location or description"><select
+                id="issueFilter">
+                <option>All</option>
+                <option>Pending</option>
+                <option>Under Review</option>
+                <option>In Progress</option>
+                <option>Resolved</option>
+            </select></div>
+        <div id="issueGrid" class="issue-grid"></div>
+    </main>
+    <footer>© 2026 CivicFix · Educational demo</footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

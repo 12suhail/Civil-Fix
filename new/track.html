@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Track Complaint - CivicFix</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav><a class="brand" href="index.html"><img src="civilfix-logo.png" alt="CivicFix" class="logo"></a>
+        <div class="navlinks">
+            <a href="index.html">Home</a>
+            <a href="report.html">Report Issue</a>
+            <a class="active" href="track.html">Track</a>
+            <a href="issues.html">Public Issues</a>
+            <a href="admin.html">Admin</a>
+        </div>
+    </nav>
+    <main class="page">
+        <div class="page-title"><span class="pill">COMPLAINT TRACKER</span>
+            <h1>Where is your complaint?</h1>
+            <p>Enter a CivicFix complaint ID to see the latest status.</p>
+        </div>
+        <form id="trackForm" class="search-card"><input id="trackId" placeholder="e.g. CF1025" required><button
+                class="btn primary">Track Complaint</button></form>
+        <div id="trackResult"></div>
+        <section class="info-box">
+            <b>Demo IDs:</b> CF1025 (Streetlight · Under Review), CF1024 (Pothole · In Progress),
+            CF1023 (Garbage · Resolved)
+        </section>
+    </main>
+    <footer>© 2026 CivicFix · Educational demo</footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

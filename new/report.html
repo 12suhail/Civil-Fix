@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Report Issue - CivicFix</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav><a class="brand" href="index.html"><img src="civilfix-logo.png" alt="CivicFix" class="logo"></a>
+        <div class="navlinks">
+            <a href="index.html">Home</a>
+            <a class="active" href="report.html">Report Issue</a>
+            <a href="track.html">Track</a>
+            <a href="issues.html">Public Issues</a>
+            <a href="admin.html">Admin</a>
+        </div>
+    </nav>
+    <main class="page">
+        <div class="page-title"><span class="pill">STEP 1 OF 1</span>
+            <h1>Report a public issue</h1>
+            <p>Give us enough detail to help route your report to the right department.</p>
+        </div>
+        <form id="reportForm" class="form-card">
+            <div class="form-grid"><label>Full name<input id="name" required
+                        placeholder="Your name"></label><label>Mobile number<input id="phone" required
+                        pattern="[0-9]{10}" placeholder="10-digit number"></label></div>
+            <label>Issue category<select id="type" required>
+                    <option value="">Select category</option>
+                    <option>Streetlight</option>
+                    <option>Pothole</option>
+                    <option>Garbage</option>
+                    <option>Water</option>
+                    <option>Traffic</option>
+                    <option>Fallen Tree</option>
+                    <option>Other</option>
+                </select></label>
+            <label>Location<input id="location" required placeholder="Street / landmark / area"></label>
+            <label>Description<textarea id="description" required minlength="10"
+                    placeholder="Describe the issue, its size/severity, and any useful landmark..."></textarea></label>
+            <div class="upload"><b>📷 Photo evidence (optional)</b><input id="photo" type="file"
+                    accept="image/*"><small>Demo only — the image is previewed in your browser.</small><img id="preview"
+                    class="preview"></div>
+            <div class="check"><input id="consent" type="checkbox" required><span>I confirm the information is accurate
+                    and understand this is an educational demo.</span></div>
+            <button class="btn primary" type="submit">Submit Complaint →</button>
+            <div id="success" class="success hidden"></div>
+        </form>
+    </main>
+    <footer>© 2026 CivicFix · Educational demo</footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
